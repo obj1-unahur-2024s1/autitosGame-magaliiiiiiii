@@ -1,0 +1,28 @@
+
+import wollok.game.*
+import auto.*
+
+
+program miPrimerWollokGame {
+
+	game.width(14) // ancho del tablero cant de celda
+	game.height(8)   // lrgo del tablero *eje y
+	game.boardGround("empedrado.jpg")
+	game.cellSize(50)
+
+
+	game.addVisual(auto) //no funciionaaaaaa >(
+	
+	//game.whenKeyPressedDo(key, action) queremos moverrnos a la derecha
+	//en clase se resolvio, pero con errores (ver)
+	//game.whenKeyPressedDo(keyboard.right(),  auto.position(auto.position.x(), auto.position.y()+1)
+	//se probo agregando un metodo en auto que sea moverse a la derecha
+	//game.whenKeyPressedDo(keyboard.right(), {auto.moverALaDerecha()})
+	// como no funciona, usamos :
+	keyboard.left().onPressDo{ auto.moverALaDerecha()}
+	
+	
+	
+	game.start() //siempre ultimo, si queda algo por debajo no se ejecuta!!!
+
+}
